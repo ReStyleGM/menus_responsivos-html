@@ -1,0 +1,85 @@
+@import url('https://fonts.cdnfonts.com/css/cocogoose'); /* Fonte Utilizada */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Cocogoose", sans-serif; /* Fonte do Site*/
+}
+
+.menu_space {
+    position: fixed;
+    border-radius: 64px;
+    top: 32px;
+    left: 50%; 
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+.menu { /*  */
+    position: fixed;
+    display: flex;
+    align-items: center;
+    top: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px;
+    background-color: rgb(238, 231, 231);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+
+/* Animações da NavBar*/
+.menu::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: brown;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+    z-index: 0;
+}
+
+.menu:hover::before {
+    transform: scaleX(1);
+}
+
+.itens_menu {
+    position: relative;
+    z-index: 1; /* Ficar acima do Menu (Garantia)*/
+    display: flex;
+    gap: 6px
+}
+
+.itens_menu .item_menu {
+    width: max-content;
+    height: 55px;
+    border-radius: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+.itens_menu .item_menu a{       /* Textos do Menu */
+    user-select: none; 
+    text-decoration: solid;
+    color: black;
+    letter-spacing: 0,01rem;
+    font-weight: 400;
+    padding: 0 50px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.itens_menu .item_menu a:hover{
+    color: white;
+}
